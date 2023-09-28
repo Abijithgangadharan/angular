@@ -1,9 +1,9 @@
 terraform {
  backend "s3" {
-    bucket         	   = "mycomponents-tfstate"
+    bucket         	   = "angular-abi"
     key              	   = "state/terraform.tfstate"
-    region         	   = "eu-central-1"
+    region         	   = "us-east-1"
     encrypt        	   = true
-    dynamodb_table = "mycomponents_tf_lockid"
+    dynamodb_table = "angular-db"
   }
 }

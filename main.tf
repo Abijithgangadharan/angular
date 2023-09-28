@@ -147,15 +147,8 @@ resource "aws_lb_target_group" "ElasticLoadBalancingV2TargetGroup" {
     vpc_id = "vpc-09944f1f6835d0fb8"
     name = "angular-tg"
 }
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.18.0"
-    }
-  }
 
-  backend "s3" {
+backend "s3" {
     bucket         	   = "mycomponents-tfstate"
     key              	   = "state/terraform.tfstate"
     region         	   = "eu-central-1"

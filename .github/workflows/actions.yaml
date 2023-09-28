@@ -25,7 +25,7 @@ jobs:
     - name: Terraform Validate
       uses: hashicorp/terraform-github-actions/validate@v0.3.7
 
-    - name: Terraform Apply
+    - name: Terraform Apply -lock=false
       uses: hashicorp/terraform-github-actions/apply@v0.4.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

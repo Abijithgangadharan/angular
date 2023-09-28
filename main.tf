@@ -147,3 +147,11 @@ resource "aws_lb_target_group" "ElasticLoadBalancingV2TargetGroup" {
     vpc_id = "vpc-09944f1f6835d0fb8"
     name = "angular-tg"
 }
+  backend "s3" {
+    bucket         	   = "angular-abi"
+    key              	   = "state/terraform.tfstate"
+    region         	   = "us-east-1"
+    encrypt        	   = true
+    dynamodb_table = "angular-db"
+  }
+

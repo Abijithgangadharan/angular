@@ -33,7 +33,7 @@ resource "aws_iam_policy_attachment" "ecs_execution_role_attachment" {
 # }
 
 resource "aws_ecs_cluster" "ECSCluster" {
-    name = "angular-ecs-cluster1"
+    name = "angular-ecs-cluster-new"
 }
 
 resource "aws_ecs_service" "ECSService" {

@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_iam_role" "ecs_execution_role" {
-  name = "angular-iam-service"
+  name = "angular-iam-service1"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
@@ -33,11 +33,11 @@ resource "aws_iam_policy_attachment" "ecs_execution_role_attachment" {
 # }
 
 resource "aws_ecs_cluster" "ECSCluster" {
-    name = "angular-ecs-cluster"
+    name = "angular-ecs-cluster1"
 }
 
 resource "aws_ecs_service" "ECSService" {
-    name = "angular-app-service"
+    name = "angular-app-svc"
     cluster = aws_ecs_cluster.ECSCluster.id
     load_balancer {
         target_group_arn = aws_lb_target_group.ElasticLoadBalancingV2TargetGroup.arn
@@ -94,7 +94,7 @@ resource "aws_ecs_task_definition" "ECSTaskDefinition" {
 
 
 resource "aws_lb" "ElasticLoadBalancingV2LoadBalancer" {
-    name = "angular-lb"
+    name = "angular-load"
     internal = false
     load_balancer_type = "application"
     subnets = [
@@ -145,8 +145,5 @@ resource "aws_lb_target_group" "ElasticLoadBalancingV2TargetGroup" {
     protocol = "HTTP"
     target_type = "ip"
     vpc_id = "vpc-09944f1f6835d0fb8"
-    name = "angular-tg"
+    name = "angular-target-group"
 }
-
-
-

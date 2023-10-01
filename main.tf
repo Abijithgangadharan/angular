@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_iam_role" "ecs_execution_role" {
-  name = "angular-iam-service1"
+  name = "angular-iam-service2"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
